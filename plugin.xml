@@ -47,8 +47,8 @@
             </feature>
         </config-file>
 
-        <source-file src="src/android/values.xml" target-dir="" />
-        <config-file target="values.xml" parent="/*">
+        <source-file src="src/android/localytics.xml" target-dir="res/values" />
+        <config-file target="res/values/localytics.xml" parent="/*">
             <string name="app_key">$APP_KEY</string>
         </config-file>
 
