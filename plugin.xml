@@ -13,12 +13,13 @@
         <engine name="cordova" version=">=3.0.0" />
     </engines>
 
-    <preference name="APP_KEY" />
+    <preference name="APP_KEY_IOS" />
+    <preference name="APP_KEY_ANDROID" />
 
     <platform name="ios">
 
         <config-file target="*-Info.plist" parent="LocalyticsAppKey">
-            <string>$APP_KEY</string>
+            <string>$APP_KEY_IOS</string>
         </config-file>
 
         <config-file target="config.xml" parent="/*">
@@ -32,7 +33,7 @@
         <source-file src="src/ios/LocalyticsPlugin.m" />
 
         <framework src="libsqlite3.dylib" />
-        <framework src="libz.dylib" />
+        <framework src="libz.tbd" />
         <framework src="SystemConfiguration.framework" />
         <framework src="AdSupport.framework" weak="true" />
         <framework src="CoreLocation.framework" weak="true" />
@@ -40,6 +41,7 @@
     </platform>
 
     <platform name="android">
+        <framework src="com.android.support:support-v4:+" />
 
         <config-file target="config.xml" parent="/*">
             <feature name="LocalyticsPlugin" >
@@ -49,7 +51,7 @@
 
         <source-file src="src/android/localytics.xml" target-dir="res/values" />
         <config-file target="res/values/localytics.xml" parent="/*">
-            <string name="app_key">$APP_KEY</string>
+            <string name="app_key">$APP_KEY_ANDROID</string>
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/manifest">
@@ -59,7 +61,6 @@
         </config-file>
 
         <source-file src="src/android/localytics.jar" target-dir="libs/" />
-        <source-file src="src/android/android-support-v4.jar" target-dir="libs" />
         <source-file src="src/android/LocalyticsPlugin.java" target-dir="src/com/localytics/phonegap/" />
 
     </platform>
