@@ -38,7 +38,6 @@
         <framework src="SystemConfiguration.framework" />
         <framework src="AdSupport.framework" weak="true" />
         <framework src="CoreLocation.framework" weak="true" />
-        
     </platform>
 
     <platform name="android">
