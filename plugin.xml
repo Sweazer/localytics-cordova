@@ -9,7 +9,7 @@
     <license>Apache 2.0</license>
     <keywords>localytics</keywords>
 
-    <js-module src="www/Localytics.js" name="Localytics">
+    <js-module src="www/localytics.js" name="Localytics">
         <clobbers target="Localytics" />
     </js-module>
     
@@ -21,7 +21,6 @@
     <preference name="APP_KEY_ANDROID" />
 
     <platform name="ios">
-
         <config-file target="*-Info.plist" parent="LocalyticsAppKey">
             <string>$APP_KEY_IOS</string>
         </config-file>
